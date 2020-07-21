@@ -416,12 +416,43 @@
                         <!-- ================================== TOP NAVIGATION : END ================================== -->
                     </div><!-- /.sidemenu-holder -->
 
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
                     <div class="col-xs-12 col-sm-8 col-md-9 homebanner-holder">
                         <!-- ========================================== SECTION – HERO ========================================= -->
                         <div id="hero">
                             <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
 
-                                <div class="item" style="background-image: url(assets/images/sliders/slider01.jpg);">
+            <?php
+                                
+             $query = "SELECT * FROM slider LIMIT 0,2";                   
+              $result = mysqli_query($connection,$query);  
+                while($row = mysqli_fetch_array($result)){
+                    
+                 $slider_name = $row['slider_name']; 
+                  $slider_img = $row['slider_img']; 
+                    
+                    
+            
+
+                                
+               ?>
+
+          
+        <img class="item" src="assets/images/sliders/<?php echo $slider_img ; ?>" alt="banner1">
+          
+<!--           <div class="item" style="background-image: url(assets/images/sliders/slider01.jpg);">                 -->
+
+<!--
                                     <div class="container-fluid">
                                         <div class="caption vertical-center text-left">
                                             <div class="big-text fadeInDown-1">
@@ -439,33 +470,28 @@
                                             <div class="button-holder fadeInDown-3">
                                                 <a href="single-product.html" class="big le-button ">shop now</a>
                                             </div>
-                                        </div><!-- /.caption -->
-                                    </div><!-- /.container-fluid -->
-                                </div><!-- /.item -->
+                                        </div>
+                                   
+                                    </div>
+-->
 
-                                <div class="item" style="background-image: url(assets/images/sliders/slider03.jpg);">
-                                    <div class="container-fluid">
-                                        <div class="caption vertical-center text-left">
-                                            <div class="big-text fadeInDown-1">
-                                                Want a<span class="big"><span class="sign">$</span>200</span>Discount?
-                                            </div>
+                                         <?php } ?>  
+                                </div>
+                                
+                      
+                                
+                                
 
-                                            <div class="excerpt fadeInDown-2">
-                                                on selected <br>desktop pcs<br>
-                                            </div>
-                                            <div class="small fadeInDown-2">
-                                                terms and conditions apply
-                                            </div>
-                                            <div class="button-holder fadeInDown-3">
-                                                <a href="single-product.html" class="big le-button ">shop now</a>
-                                            </div>
-                                        </div><!-- /.caption -->
-                                    </div><!-- /.container-fluid -->
-                                </div><!-- /.item -->
 
-                            </div><!-- /.owl-carousel -->
+                            </div>
+                            
+                    
                         </div>
-                        <!-- ========================================= SECTION – HERO : END ========================================= -->
-                    </div><!-- /.homebanner-holder -->
-                </div><!-- /.container -->
-            </div><!-- /#top-banner-and-menu -->
+            
+                    </div>
+                </div>
+
+           
+                     
+
+

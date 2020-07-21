@@ -4,10 +4,23 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <?php include "main-files/header.php"; ?>
     
+ <style>
+      .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
     
+    
+    </style> 
+    
+        
     
 
        <body>
+       
+       
+       
+       
         <div class="wrapper">
    
         
