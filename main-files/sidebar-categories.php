@@ -191,16 +191,6 @@
              
              
              
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
                   <!-- ========================================= CATEGORY TREE ========================================= -->
                         <div class="widget accordion-widget category-accordions">
                             <h1 class="border">Product Categories</h1>
