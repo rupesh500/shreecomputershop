@@ -34,7 +34,6 @@
            
            
            
-           
             <!-- ========================================= HOME BANNERS ========================================= -->
             <section id="banner-holder" class="wow fadeInUp">
                 <div class="container">
