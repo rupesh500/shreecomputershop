@@ -54,13 +54,7 @@ if(!isset($_GET['pro_cat_get'])){
       
   }  
    
-}
-else{
-    
-    
-    
 }    
-    
 ?>
 
 
@@ -238,43 +232,9 @@ Price: $89 - $2899
 
 <div class="col-xs-12 col-sm-9 no-margin wide sidebar">
 
+
 <!--PRODUCT FOUND OR NOT HEADING DYNAMIC-->
-   <?php
-    
-    
-  if(isset($_GET['pro_cat_get'])){
-     
-   $p_cat_id = $_GET['pro_cat_get'];
-       
-   $get_p_cat_query = "SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";    
-     $result = mysqli_query($connection,$get_p_cat_query); 
-       $row_p_cat = mysqli_fetch_array($result);
-       $p_cat_title = $row_p_cat['p_cat_title'];
-        $p_cat_desc = $row_p_cat['p_cat_desc'];
-       
-       
-       
-       $get_product = "SELECT * FROM products WHERE product_Cat_id ='$p_cat_id'";
-       $run_get_product = mysqli_query($connection,$get_product);
-      $count=mysqli_num_rows($run_get_product );
-       if($count==0){
-        echo "<h1>No Product Found in This Categories</h1>";   
-   
-       }
-       else{
- 
-           echo "
-           <h1>$p_cat_title</h1>
-           <p>$p_cat_desc</p>
-           ";
-       }
-   
-   } 
-    
- 
-    
-    
-    ?>  
+   <?php getproduct_cat_pro(); ?>  
 
 <section id="gaming">
 <div class="grid-list-products">
@@ -313,110 +273,38 @@ Price: $89 - $2899
 <div class="product-grid-holder">
 <div class="row no-margin">
 
-
-
 <?php 
 
     
    if(isset($_GET['pro_cat_get'])){
      $get_cat_id = $_GET['pro_cat_get']; 
-
-$get_product_cli = "SELECT * FROM products WHERE product_cat_id='$get_cat_id' "; 
-       $get_product_r = mysqli_query($connection,$get_product_cli);
-      while($row = mysqli_fetch_array($get_product_r)){
+       
+       $show_query = "SELECT * FROM categories WHERE cat_id='$get_cat_id'";
+       $result_cat = mysqli_query($connection,$show_query);
+       $countresult = mysqli_fetch_array($result_cat);
+       $cat_title = $countresult['cat_title'];
+        $cat_desc = $countresult['cat_desc'];
+       
+$get_product = "SELECT * FROM products WHERE cat_id='$get_cat_id'"; 
+       $get_product_result = mysqli_query($connection,$query);
+      while($row = mysqli_fetch_array($get_product_result)){
+       
+          
+          
+        $product_id = $_row['product_id']; 
+    
+      	$product_cat_id = $_row['product_cat_id']; 
+      $cat_id = $_row['cat_id'];
+              $date = $_row['date']; 
      
-            $product_id22 = $row['product_id']; 
-            $product_cat_id22 = $row['product_cat_id']; 
-            $cat_id22 = $row['cat_id'];
-            $date22 = $row['date']; 
-            $product_title22 = $row['product_title']; 
-            $product_img22 = $row['product_img1']; 
-            $product_prize22 = $row['product_prize']; 
-            $product_desc22 = $row['product_desc']; 
-            $product_keyword22 = $row['product_keyword'];   
+      $product_title = $_row['product_title']; 
+      $product_img1 = $_row['product_img1']; 
+            $product_prize = $_row['product_prize']; 
+            $product_desc = $_row['product_desc']; 
+      $product_keyword = $_row['product_keyword'];   
   
 
     ?>
-
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon red"><span>sale</span></div>
-<div class="image">
-<img alt="" src="admin/product_images/<?php echo $product_img22; ?>" data-echo="admin/product_images/<?php echo $product_img22; ?>" />
-</div>
-<div class="body">
-<div class="label-discount green">-50% sale</div>
-<div class="title">
-<a href=""><?php echo $product_title22; ?></a>
-</div>
-<div class="brand"><?php echo $product_keyword22; ?></div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">RS <?php echo $product_prize22; ?></div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<!--<a class="btn-add-to-compare" href="#">compare</a>-->
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
-
-
-
-
-
-<?php } } ?>
-
-
-
-
-
-
-
-
-<!--SHOW ALL PRODUCT WHEN CLICJK SHOP IN NAVBAR NOT A CATEGORY-->
-<?php 
-    
-  if(!isset($_GET['pro_cat_get'])){
-   if(!isset($_GET['cat_get'])){
-       
-   $per_page = 6;
-       if(isset($_GET['page'])){
-           
-      $page=$_GET['page'];
-     }
-       
-       else{
-           $page =1;
-       }
-       
-       $start_from=($page-1) * $per_page;
-       $get_product = "SELECT * FROM products ORDER BY 1 DESC LIMIT $start_from, $per_page ";
-       $run_product = mysqli_query($connection,$get_product);
-       while($row = mysqli_fetch_array($run_product)){
-           $product_id = $row['product_id'];
-            $product_cat_id = $row['product_cat_id'];
-            $cat_id = $row['cat_id'];
-            $date = $row['date'];
-            $product_title = $row['product_title'];
-            $product_img1 = $row['product_img1'];
-            $product_img2 = $row['product_img2'];
-            $product_img3 = $row['product_img3'];
-            $product_prize = $row['product_prize'];
-            $product_desc = $row['product_desc'];
-            $product_keyword = $row['product_keyword'];
-           
- 
- 
-    
-    ?>
-
 
 
 <div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
@@ -448,12 +336,7 @@ $get_product_cli = "SELECT * FROM products WHERE product_cat_id='$get_cat_id' ";
 </div><!-- /.product-item -->
 </div><!-- /.product-item-holder -->
 
-
-
-
-
-<?php } ?>
-
+<?php      }}  ?>
 
 
 
@@ -468,49 +351,6 @@ $get_product_cli = "SELECT * FROM products WHERE product_cat_id='$get_cat_id' ";
 
 <div class="col-xs-12 col-sm-6 text-left">
 <ul class="pagination ">
-<?php
-   
- $query = "SELECT * FROM products";
-       $select_all = mysqli_query($connection,$query);
-       $total_record = mysqli_num_rows($select_all);
-       $total_pages=ceil($total_record/$per_page);
-       
-   echo "
-   <li> <a href='shop.php?page=1'>".'first page'."</a> </li>
-   
-      ";
-   
-  for($i=1; $i<=$total_pages; $i++){
-  
-       
-  echo "  
-        <li> <a href='shop.php?page=".$i."'>".$i."</a> </li>
-       
-       ";
-
-  }
-  
-  
-        echo "  
-        <li> <a href='shop.php?page=$total_pages'>".'Last page'."</a> </li>
-       
-       ";
-
-  
-   
-   
-   }} ?>
-
-<!--
-<li class="current"><a  href="#">1</a></li>
-<li><a href="#">2</a></li>
-<li><a href="#">3</a></li>
-<li><a href="#">4</a></li>
-<li><a href="#">next</a></li>
-
--->
-
-
 
 </ul>
 </div>
@@ -526,160 +366,6 @@ Showing <span>1-9</span> of <span>11</span> results
 </div><!-- /.products-grid #grid-view -->
 
 
-
-
-<!--  //////////////////////////////LIST VIEW PRODUCT/////////////////////////////////////////// HERE////////////////////////////////////////////////////////////////////////////////////////-->
-
-<div id="list-view" class="products-grid fade tab-pane ">
-<div class="products-list">
-
-
-
-
-<!--SHOW ALL PRODUCT WHEN CLICJK SHOP IN NAVBAR NOT A CATEGORY WHEN LIST VIEW-->
-<?php 
-    
-  if(!isset($_GET['pro_cat_get'])){
-   if(!isset($_GET['cat_get'])){
-       
-   $per_page1 = 6;
-       if(isset($_GET['page1'])){
-           
-      $page1=$_GET['page1'];
-     }
-       
-       else{
-           $page1 =1;
-       }
-       
-       $start_fromlist=($page1-1) * $per_page1;
-       $get_product_list = "SELECT * FROM products ORDER BY 1 DESC LIMIT $start_fromlist, $per_page1 ";
-       $run_product_list = mysqli_query($connection,$get_product_list);
-       while($row = mysqli_fetch_array($run_product_list)){
-           $product_id = $row['product_id'];
-            $product_cat_id = $row['product_cat_id'];
-            $cat_id = $row['cat_id'];
-            $date = $row['date'];
-            $product_title = $row['product_title'];
-            $product_img1 = $row['product_img1'];
-            $product_img2 = $row['product_img2'];
-            $product_img3 = $row['product_img3'];
-            $product_prize = $row['product_prize'];
-            $product_desc = $row['product_desc'];
-            $product_keyword = $row['product_keyword'];
-           
-           
-    
-    ?>
-
-
-
-<div class="product-item product-item-holder">
-<div class="ribbon red"><span>sale</span></div>
-<div class="ribbon blue"><span>new!</span></div>
-<div class="row">
-<div class="no-margin col-xs-12 col-sm-4 image-holder">
-<div class="image">
-<img alt="" src="admin/product_images/<?php echo $product_img1; ?>" data-echo="admin/product_images/<?php echo $product_img1; ?>" />
-</div>
-</div><!-- /.image-holder -->
-<div class="no-margin col-xs-12 col-sm-5 body-holder">
-<div class="body">
-<div class="label-discount green">-50% sale</div>
-<div class="title">
-<a href="single-product.html"><?php echo $product_title; ?></a>
-</div>
-<div class="brand"><?php echo $product_keyword; ?></div>
-<div class="excerpt">
-<p><?php echo $product_desc; ?></p>
-</div>
-<div class="addto-compare">
-<!--<a class="btn-add-to-compare" href="#">add to compare list</a>-->
-</div>
-</div>
-</div><!-- /.body-holder -->
-<div class="no-margin col-xs-12 col-sm-3 price-area">
-<div class="right-clmn">
-<div class="price-current">RS:<?php echo $product_prize; ?></div>
-<div class="price-prev">$1399.00</div>
-<div class="availability"><label>availability:</label><span class="available">  in stock</span></div>
-<a class="le-button" href="#">add to cart</a>
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-</div>
-</div><!-- /.price-area -->
-</div><!-- /.row -->
-</div><!-- /.product-item -->
-
-
-<?php } ?>
-
-
-</div><!-- /.products-list -->
-
-<div class="pagination-holder">
-<div class="row">
-<div class="col-xs-12 col-sm-6 text-left">
-<ul class="pagination">
-
-
-<?php
-   
- $query = "SELECT * FROM products";
-       $select_all_list = mysqli_query($connection,$query);
-       $total_record_list = mysqli_num_rows($select_all_list);
-       $total_pages_list=ceil($total_record_list/$per_page1);
-       
-   echo "
-   <li> <a href='shop.php?page1=1'>".'first page'."</a> </li>
-   
-      ";
-   
-  for($i=1; $i<=$total_pages_list; $i++){
-  
-       
-  echo "  
-        <li> <a href='shop.php?page1=".$i."'>".$i."</a> </li>
-       
-       ";
-
-  }
-  
-  
-        echo "  
-        <li> <a href='shop.php?page1=$total_pages_list'>".'Last page'."</a> </li>
-       
-       ";
-
-  
-   
-   
-   }} ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</ul><!-- /.pagination -->
-</div>
-<div class="col-xs-12 col-sm-6">
-<div class="result-counter">
-Showing <span>1-9</span> of <span>11</span> results
-</div><!-- /.result-counter -->
-</div>
-</div><!-- /.row -->
-</div><!-- /.pagination-holder -->
-
-</div><!-- /.products-grid #list-view -->
 
 </div><!-- /.tab-content -->
 </div><!-- /.grid-list-products -->
