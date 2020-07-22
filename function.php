@@ -67,7 +67,7 @@ while($row_products = mysqli_fetch_array($run_get_product)){
 </div>
 <div class='hover-area'>
 <div class='add-cart-button'>
-<a href='single-product.html' class='le-button'>add to cart</a>
+<a href='detailes.php?get_d=$product_id' class='le-button'>add to cart</a>
 </div>
 <div class='wish-compare'>
 <a class='btn-add-to-wishlist' href='#'>add to wishlist</a>
@@ -161,7 +161,7 @@ while($row_productsc = mysqli_fetch_array($run_products)){
 </div>
 <div class='hover-area'>
 <div class='add-cart-button'>
-<a href='single-product.html' class='le-button'>add to cart</a>
+<a href='detailes.php?get_d=$product_id' class='le-button'>add to cart</a>
 </div>
 <div class='wish-compare'>
 <a class='btn-add-to-wishlist' href='#'>add to wishlist</a>

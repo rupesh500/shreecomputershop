@@ -260,7 +260,8 @@ else{
 </div>
 <div class='hover-area'>
 <div class='add-cart-button'>
-<a href='single-product.html' class='le-button'>add to cart</a>
+ <a class='le-button' href='detailes.php?get_d=<?php echo $product_id; ?>'> add to cart</a>
+
 </div>
 <div class='wish-compare'>
 <a class='btn-add-to-wishlist' href='#'>add to wishlist</a>
@@ -426,7 +427,7 @@ Showing <span>1-9</span> of <span>11</span> results
 <div class="price-current">RS:<?php echo $product_prize; ?></div>
 <div class="price-prev">$1399.00</div>
 <div class="availability"><label>availability:</label><span class="available">  in stock</span></div>
-<a class="le-button" href="#">add to cart</a>
+ <a class="le-button" href="detailes.php?get_d=<?php echo $product_id; ?>"> add to cart</a>
 <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
 </div>
 </div><!-- /.price-area -->
