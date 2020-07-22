@@ -1974,9 +1974,14 @@ header {
     margin: 0 34px;
     padding: 11px 0; }
   .product-grid-holder .product-item-holder .body {
-    margin: 0 34px;
+    /* margin: 0 34px; */
     min-height: 107px;
-    border-bottom: 1px solid #ececec; }
+    border-bottom: 1px solid #ececec;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+}
   .product-grid-holder .product-item-holder.size-big .body {
     min-height: 133px; }
     .product-grid-holder .product-item-holder.size-big .body .title {
@@ -2036,9 +2041,14 @@ header {
     font-size: 14px;
     color: lightgray; }
   .product-item-holder .price-current {
-    color: #2A1051;
+      color: #2A1051;
     font-weight: 700;
-    font-size: 17px; }
+    font-size: 17px;
+    text-align: center;
+    margin: 0 auto;
+    display: contents;
+
+}
   .product-item-holder .body .title {
     margin: 7px 0 0 0;
     line-height: 19px; }

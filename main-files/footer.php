@@ -525,9 +525,32 @@
                             <!-- ============================================================= LINKS FOOTER ============================================================= -->
                             <div class="link-widget">
                                 <div class="widget">
-                                    <h3>Find it fast</h3>
+                                    <h3>Top Product Categories</h3>
+                                             
+                                       <?php
+                                        $select_footer_cat = "SELECT * FROM product_categories";
+                                        $select_cat_result = mysqli_query($connection,$select_footer_cat);
+                                        while($row = mysqli_fetch_array($select_cat_result)){
+                                         $p_cat_id = $row['p_cat_id'];
+                                         $p_cat_title = $row['p_cat_title'];  
+                                         $p_cat_desc = $row['p_cat_desc'];  
+                                            
+                                            
+                                      
+                                        
+                                        ?>
+                                    
+                                    
+                                    
+                                    
+                                    
                                     <ul>
-                                        <li><a href="category-grid.html">laptops &amp; computers</a></li>
+                                       
+                              
+                                        <li><a href="#"><?php echo $p_cat_title; ?></a></li>
+<!--
+                                       
+                                       
                                         <li><a href="category-grid.html">Cameras &amp; Photography</a></li>
                                         <li><a href="category-grid.html">Smart Phones &amp; Tablets</a></li>
                                         <li><a href="category-grid.html">Video Games &amp; Consoles</a></li>
@@ -535,7 +558,9 @@
                                         <li><a href="category-grid.html">Gadgets</a></li>
                                         <li><a href="category-grid.html">Car Electronic &amp; GPS</a></li>
                                         <li><a href="category-grid.html">Accesories</a></li>
+-->
                                     </ul>
+                                    <?php } ?>
                                 </div><!-- /.widget -->
                             </div><!-- /.link-widget -->
 

@@ -1,4 +1,5 @@
-
+<?php include "../database/db.php"; ?>
+<?php include "function.php"; ?>
 <!-- Mirrored from designreset.com/cork/ltr/demo6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Jul 2020 06:13:42 GMT -->
 <head>
     <meta charset="utf-8">

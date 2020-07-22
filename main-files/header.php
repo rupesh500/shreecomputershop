@@ -48,3 +48,17 @@
             <script src="assets/js/respond.min.js"></script>
         <![endif]-->
     </head>
+    
+   
+  <style>
+      .main-boxes{
+           margin: 30px 0px 50px 0px;
+      }
+
+/*
+      .main-content-img{
+          max-width: 80px;
+      }
+*/
+
+</style>
