@@ -363,9 +363,9 @@ notebooks
 
 <div class="grid-list-buttons">
 <ul>
-<li class="grid-list-button-item active"><a data-toggle="tab" href="#grid-view"><i class="fa fa-th-large"></i> Grid</a></li>
+<li class="grid-list-button-item"><a data-toggle="tab" href="#grid-view"><i class="fa fa-th-large"></i> Grid</a></li>
 
-<li class="grid-list-button-item "><a data-toggle="tab" href="#list-view"><i class="fa fa-th-list"></i> List</a></li>
+<li class="grid-list-button-item"><a data-toggle="tab" href="#list-view"><i class="fa fa-th-list"></i> List</a></li>
 
 </ul>
 </div>
@@ -471,7 +471,7 @@ notebooks
 <ul class="pagination ">
 <?php
    
- $query = "SELECT * FROm products";
+ $query = "SELECT * FROM products";
        $select_all = mysqli_query($connection,$query);
        $total_record = mysqli_num_rows($select_all);
        $total_pages=ceil($total_record/$per_page);
@@ -526,8 +526,54 @@ Showing <span>1-9</span> of <span>11</span> results
 </div><!-- /.pagination-holder -->
 </div><!-- /.products-grid #grid-view -->
 
+
+
+
+<!--  //////////////////////////////LIST VIEW PRODUCT/////////////////////////////////////////// HERE////////////////////////////////////////////////////////////////////////////////////////-->
+
 <div id="list-view" class="products-grid fade tab-pane ">
 <div class="products-list">
+
+
+
+
+<!--SHOW ALL PRODUCT WHEN CLICJK SHOP IN NAVBAR NOT A CATEGORY WHEN LIST VIEW-->
+<?php 
+    
+  if(!isset($_GET['pro_cat_get'])){
+   if(!isset($_GET['cat_get'])){
+       
+   $per_page1 = 6;
+       if(isset($_GET['page1'])){
+           
+      $page1=$_GET['page1'];
+     }
+       
+       else{
+           $page1 =1;
+       }
+       
+       $start_fromlist=($page1-1) * $per_page1;
+       $get_product_list = "SELECT * FROM products ORDER BY 1 DESC LIMIT $start_fromlist, $per_page1 ";
+       $run_product_list = mysqli_query($connection,$get_product_list);
+       while($row = mysqli_fetch_array($run_product_list)){
+           $product_id = $row['product_id'];
+            $product_cat_id = $row['product_cat_id'];
+            $cat_id = $row['cat_id'];
+            $date = $row['date'];
+            $product_title = $row['product_title'];
+            $product_img1 = $row['product_img1'];
+            $product_img2 = $row['product_img2'];
+            $product_img3 = $row['product_img3'];
+            $product_prize = $row['product_prize'];
+            $product_desc = $row['product_desc'];
+            $product_keyword = $row['product_keyword'];
+           
+           
+    
+    ?>
+
+
 
 <div class="product-item product-item-holder">
 <div class="ribbon red"><span>sale</span></div>
@@ -535,27 +581,27 @@ Showing <span>1-9</span> of <span>11</span> results
 <div class="row">
 <div class="no-margin col-xs-12 col-sm-4 image-holder">
 <div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
+<img alt="" src="admin/product_images/<?php echo $product_img1; ?>" data-echo="admin/product_images/<?php echo $product_img1; ?>" />
 </div>
 </div><!-- /.image-holder -->
 <div class="no-margin col-xs-12 col-sm-5 body-holder">
 <div class="body">
 <div class="label-discount green">-50% sale</div>
 <div class="title">
-<a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
+<a href="single-product.html"><?php echo $product_title; ?></a>
 </div>
-<div class="brand">sony</div>
+<div class="brand"><?php echo $product_keyword; ?></div>
 <div class="excerpt">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt.</p>
+<p><?php echo $product_desc; ?></p>
 </div>
 <div class="addto-compare">
-<a class="btn-add-to-compare" href="#">add to compare list</a>
+<!--<a class="btn-add-to-compare" href="#">add to compare list</a>-->
 </div>
 </div>
 </div><!-- /.body-holder -->
 <div class="no-margin col-xs-12 col-sm-3 price-area">
 <div class="right-clmn">
-<div class="price-current">$1199.00</div>
+<div class="price-current">RS:<?php echo $product_prize; ?></div>
 <div class="price-prev">$1399.00</div>
 <div class="availability"><label>availability:</label><span class="available">  in stock</span></div>
 <a class="le-button" href="#">add to cart</a>
@@ -566,151 +612,8 @@ Showing <span>1-9</span> of <span>11</span> results
 </div><!-- /.product-item -->
 
 
-<div class="product-item product-item-holder">
-<div class="ribbon green"><span>bestseller</span></div>
-<div class="row">
-<div class="no-margin col-xs-12 col-sm-4 image-holder">
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
-</div>
-</div><!-- /.image-holder -->
-<div class="no-margin col-xs-12 col-sm-5 body-holder">
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
-</div>
-<div class="brand">sony</div>
-<div class="excerpt">
-<div class="star-holder">
-<div class="star" data-score="4"></div>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt.</p>
-</div>
-<div class="addto-compare">
-<a class="btn-add-to-compare" href="#">add to compare list</a>
-</div>
-</div>
-</div><!-- /.body-holder -->
-<div class="no-margin col-xs-12 col-sm-3 price-area">
-<div class="right-clmn">
-<div class="price-current">$1199.00</div>
-<div class="price-prev">$1399.00</div>
-<div class="availability"><label>availability:</label><span class="not-available">out of stock</span></div>
-<a class="le-button disabled" href="#">add to cart</a>
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-</div>
-</div><!-- /.price-area -->
-</div><!-- /.row -->
-</div><!-- /.product-item -->
+<?php } ?>
 
-
-<div class="product-item product-item-holder">
-<div class="ribbon red"><span>sell</span></div>
-<div class="row">
-<div class="no-margin col-xs-12 col-sm-4 image-holder">
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
-</div>
-</div><!-- /.image-holder -->
-<div class="no-margin col-xs-12 col-sm-5 body-holder">
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
-</div>
-<div class="brand">sony</div>
-<div class="excerpt">
-<div class="star-holder">
-<div class="star" data-score="2"></div>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt. </p>
-</div>
-<div class="addto-compare">
-<a class="btn-add-to-compare" href="#">add to compare list</a>
-</div>
-</div>
-</div><!-- /.body-holder -->
-<div class="no-margin col-xs-12 col-sm-3 price-area">
-<div class="right-clmn">
-<div class="price-current">$1199.00</div>
-<div class="price-prev">$1399.00</div>
-<div class="availability"><label>availability:</label><span class="available">in stock</span></div>
-<a class="le-button" href="#">add to cart</a>
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-</div>
-</div><!-- /.price-area -->
-</div><!-- /.row -->
-</div><!-- /.product-item -->
-
-<div class="product-item product-item-holder">
-<div class="row">
-<div class="no-margin col-xs-12 col-sm-4 image-holder">
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
-</div>
-</div><!-- /.image-holder -->
-<div class="no-margin col-xs-12 col-sm-5 body-holder">
-<div class="body">
-<div class="label-discount green">-50% sale</div>
-<div class="title">
-<a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
-</div>
-<div class="brand">sony</div>
-<div class="excerpt">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt. </p>
-</div>
-<div class="addto-compare">
-<a class="btn-add-to-compare" href="#">add to compare list</a>
-</div>
-</div>
-</div><!-- /.body-holder -->
-<div class="no-margin col-xs-12 col-sm-3 price-area">
-<div class="right-clmn">
-<div class="price-current">$1199.00</div>
-<div class="price-prev">$1399.00</div>
-<div class="availability"><label>availability:</label><span class="available">  in stock</span></div>
-<a class="le-button" href="#">add to cart</a>
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-</div>
-</div><!-- /.price-area -->
-</div><!-- /.row -->
-</div><!-- /.product-item -->
-
-<div class="product-item product-item-holder">
-<div class="ribbon green"><span>bestseller</span></div>
-<div class="row">
-<div class="no-margin col-xs-12 col-sm-4 image-holder">
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-05.jpg" />
-</div>
-</div><!-- /.image-holder -->
-<div class="no-margin col-xs-12 col-sm-5 body-holder">
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
-</div>
-<div class="brand">sony</div>
-<div class="excerpt">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt.</p>
-</div>
-<div class="addto-compare">
-<a class="btn-add-to-compare" href="#">add to compare list</a>
-</div>
-</div>
-</div><!-- /.body-holder -->
-<div class="no-margin col-xs-12 col-sm-3 price-area">
-<div class="right-clmn">
-<div class="price-current">$1199.00</div>
-<div class="price-prev">$1399.00</div>
-<div class="availability"><label>availability:</label><span class="available">  in stock</span></div>
-<a class="le-button" href="#">add to cart</a>
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-</div>
-</div><!-- /.price-area -->
-</div><!-- /.row -->
-</div><!-- /.product-item -->
 
 </div><!-- /.products-list -->
 
@@ -718,11 +621,55 @@ Showing <span>1-9</span> of <span>11</span> results
 <div class="row">
 <div class="col-xs-12 col-sm-6 text-left">
 <ul class="pagination">
-<li class="current"><a  href="#">1</a></li>
-<li><a href="#">2</a></li>
-<li><a href="#">3</a></li>
-<li><a href="#">4</a></li>
-<li><a href="#">next</a></li>
+
+
+<?php
+   
+ $query = "SELECT * FROM products";
+       $select_all_list = mysqli_query($connection,$query);
+       $total_record_list = mysqli_num_rows($select_all_list);
+       $total_pages_list=ceil($total_record_list/$per_page1);
+       
+   echo "
+   <li> <a href='shop.php?page1=1'>".'first page'."</a> </li>
+   
+      ";
+   
+  for($i=1; $i<=$total_pages_list; $i++){
+  
+       
+  echo "  
+        <li> <a href='shop.php?page1=".$i."'>".$i."</a> </li>
+       
+       ";
+
+  }
+  
+  
+        echo "  
+        <li> <a href='shop.php?page1=$total_pages_list'>".'Last page'."</a> </li>
+       
+       ";
+
+  
+   
+   
+   }} ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul><!-- /.pagination -->
 </div>
 <div class="col-xs-12 col-sm-6">
