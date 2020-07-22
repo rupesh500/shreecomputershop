@@ -523,7 +523,7 @@
 -->
 
                                     <li class="breadcrumb-item">
-                                        <a href="../index.php">HOME</a>
+                                        <a href="index.php">HOME</a>
                                     </li><!-- /.breadcrumb-item -->
 
                                     <li class="breadcrumb-item ">
