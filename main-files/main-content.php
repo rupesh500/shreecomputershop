@@ -74,7 +74,7 @@ $show_all = "SELECT * FROM products";
 
 <div class="hover-area">
 <div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
+<a href="single-product.php" class="le-button">add to cart</a>
 </div>
 <div class="wish-compare">
 <a class="btn-add-to-wishlist" href="#">add to wishlist</a>

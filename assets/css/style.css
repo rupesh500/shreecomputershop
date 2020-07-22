@@ -1081,8 +1081,14 @@ header {
   .breadcrumb-nav-holder.minimal .breadcrumb-item:before, .breadcrumb-nav-holder.minimal .breadcrumb-item:after {
     display: none; }
   .breadcrumb-nav-holder.minimal .breadcrumb-item > a {
-    background-color: #fff;
-    padding: 10px 18px; }
+     background-color: #fff;
+    padding: 10px 18px;
+    color: #000000bd;
+    font-weight: 600;
+
+
+
+}
   .breadcrumb-nav-holder .breadcrumb-item {
     display: inline-block !important;
     float: left;
@@ -1130,13 +1136,16 @@ header {
       .breadcrumb-nav-holder .breadcrumb-item .dropdown-menu:before {
         display: none; }
     .breadcrumb-nav-holder .breadcrumb-item > a {
-      letter-spacing: -1px;
-      display: inline-block;
-      background-color: #F9F9F9;
-      padding: 20px 18px;
-      color: #3D3D3D;
-      border-right: 1px solid #e0e0e0;
-      position: relative; }
+       letter-spacing: -1px;
+    display: inline-block;
+    background-color: #F9F9F9;
+    padding: 20px 18px;
+    color: #3D3D3D;
+    /* border-right: 1px solid #e0e0e0; */
+    position: relative;
+
+
+}
       .breadcrumb-nav-holder .breadcrumb-item > a.dropdown-toggle:after {
         content: '\f0da';
         font-family: FontAwesome;

@@ -534,31 +534,14 @@
                                          $p_cat_id = $row['p_cat_id'];
                                          $p_cat_title = $row['p_cat_title'];  
                                          $p_cat_desc = $row['p_cat_desc'];  
-                                            
-                                            
-                                      
+                                
                                         
                                         ?>
-                                    
-                                    
-                                    
-                                    
+                        
                                     
                                     <ul>
-                                       
-                              
-                                        <li><a href="#"><?php echo $p_cat_title; ?></a></li>
-<!--
-                                       
-                                       
-                                        <li><a href="category-grid.html">Cameras &amp; Photography</a></li>
-                                        <li><a href="category-grid.html">Smart Phones &amp; Tablets</a></li>
-                                        <li><a href="category-grid.html">Video Games &amp; Consoles</a></li>
-                                        <li><a href="category-grid.html">TV &amp; Audio</a></li>
-                                        <li><a href="category-grid.html">Gadgets</a></li>
-                                        <li><a href="category-grid.html">Car Electronic &amp; GPS</a></li>
-                                        <li><a href="category-grid.html">Accesories</a></li>
--->
+        <?php echo "<li><a href='shop.php?p_cat=$p_cat_id'>$p_cat_title</a></li>"    ?>
+
                                     </ul>
                                     <?php } ?>
                                 </div><!-- /.widget -->
