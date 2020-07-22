@@ -44,6 +44,22 @@
 </li>
 
 
+<?php
+if(!isset($_GET['pro_cat_get'])){
+  if(!isset($_GET['cat_get'])){
+      
+   echo "SHOP";   
+      
+  }  
+   
+}    
+    
+    
+    
+    ?>
+
+
+
 </ul><!-- /.inline -->
 </nav>
 
@@ -347,7 +363,9 @@ notebooks
 <div class="grid-list-buttons">
 <ul>
 <li class="grid-list-button-item active"><a data-toggle="tab" href="#grid-view"><i class="fa fa-th-large"></i> Grid</a></li>
+
 <li class="grid-list-button-item "><a data-toggle="tab" href="#list-view"><i class="fa fa-th-list"></i> List</a></li>
+
 </ul>
 </div>
 </div><!-- /.control-bar -->
@@ -358,22 +376,63 @@ notebooks
 <div class="product-grid-holder">
 <div class="row no-margin">
 
+
+
+
+<?php 
+    
+  if(!isset($_GET['pro_cat_get'])){
+   if(!isset($_GET['cat_get'])){
+       
+   $per_page = 6;
+       if(isset($_GET['page'])){
+           
+      $page=$_GET['page'];
+     }
+       
+       else{
+           $page =1;
+       }
+       
+       $start_from=($page-1) * $per_page;
+       $get_product = "SELECT * FROM products ORDER BY 1 DESC LIMIT $start_from, $per_page ";
+       $run_product = mysqli_query($connection,$get_product);
+       while($row = mysqli_fetch_array($run_product)){
+           $product_id = $row['product_id'];
+            $product_cat_id = $row['product_cat_id'];
+            $cat_id = $row['cat_id'];
+            $date = $row['date'];
+            $product_title = $row['product_title'];
+            $product_img1 = $row['product_img1'];
+            $product_img2 = $row['product_img2'];
+            $product_img3 = $row['product_img3'];
+            $product_prize = $row['product_prize'];
+            $product_desc = $row['product_desc'];
+            $product_keyword = $row['product_keyword'];
+           
+ 
+ 
+    
+    ?>
+
+
+
 <div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
 <div class="product-item">
 <div class="ribbon red"><span>sale</span></div>
 <div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
+<img alt="" src="admin/product_images/<?php echo $product_img1; ?>" data-echo="admin/product_images/<?php echo $product_img1; ?>" />
 </div>
 <div class="body">
 <div class="label-discount green">-50% sale</div>
 <div class="title">
-<a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
+<a href=""><?php echo $product_title; ?></a>
 </div>
-<div class="brand">sony</div>
+<div class="brand"><?php echo $product_keyword; ?></div>
 </div>
 <div class="prices">
 <div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
+<div class="price-current pull-right">RS <?php echo $product_prize; ?></div>
 </div>
 <div class="hover-area">
 <div class="add-cart-button">
@@ -381,242 +440,20 @@ notebooks
 </div>
 <div class="wish-compare">
 <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
+<!--<a class="btn-add-to-compare" href="#">compare</a>-->
 </div>
 </div>
 </div><!-- /.product-item -->
 </div><!-- /.product-item-holder -->
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon blue"><span>new!</span></div>
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
-</div>
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">White lumia 9001</a>
-</div>
-<div class="brand">nokia</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
-</div>
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">POV Action Cam</a>
-</div>
-<div class="brand">sony</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon red"><span>sale</span></div>
-<div class="ribbon green"><span>bestseller</span></div>
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
-</div>
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">Netbook Acer TravelMate B113-E-10072</a>
-</div>
-<div class="brand">acer</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon red"><span>sale</span></div>
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
-</div>
-<div class="body">
-<div class="label-discount green">-50% sale</div>
-<div class="title">
-<a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
-</div>
-<div class="brand">sony</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon blue"><span>new!</span></div>
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
-</div>
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">White lumia 9001</a>
-</div>
-<div class="brand">nokia</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
+<?php } ?>
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
-</div>
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">POV Action Cam</a>
-</div>
-<div class="brand">sony</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon red"><span>sale</span></div>
-<div class="ribbon green"><span>bestseller</span></div>
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
-</div>
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">Netbook Acer TravelMate B113-E-10072</a>
-</div>
-<div class="brand">acer</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
 
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="image">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
-</div>
-<div class="body">
-<div class="label-discount clear"></div>
-<div class="title">
-<a href="single-product.html">POV Action Cam</a>
-</div>
-<div class="brand">sony</div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">$1199.00</div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<a class="btn-add-to-compare" href="#">compare</a>
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
 
 </div><!-- /.row -->
 </div><!-- /.product-grid-holder -->
@@ -626,11 +463,15 @@ notebooks
 
 <div class="col-xs-12 col-sm-6 text-left">
 <ul class="pagination ">
+<?php }} ?>
+
+<!--
 <li class="current"><a  href="#">1</a></li>
 <li><a href="#">2</a></li>
 <li><a href="#">3</a></li>
 <li><a href="#">4</a></li>
 <li><a href="#">next</a></li>
+-->
 </ul>
 </div>
 

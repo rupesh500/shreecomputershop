@@ -61,7 +61,7 @@
                         
                         ?>
 
-                      <?php echo "<li> <a href='categories.php?cat_get=$cat_id'>$cat_title </a> </li> "; ?> 
+                      <?php echo "<li> <a href='shop.php?cat_get=$cat_id'>$cat_title </a> </li> "; ?> 
                                      
                                         
                                       <?php } ?>

@@ -58,6 +58,10 @@
       .logo-img{
              margin-top: -10px;
       }
+      .price-prev{
+          visibility: hidden!important;
+      } 
+      
       
 /*
       .main-content-img{
