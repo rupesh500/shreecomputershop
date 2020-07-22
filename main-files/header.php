@@ -55,6 +55,10 @@
            margin: 30px 0px 50px 0px;
       }
 
+      .logo-img{
+             margin-top: -10px;
+      }
+      
 /*
       .main-content-img{
           max-width: 80px;

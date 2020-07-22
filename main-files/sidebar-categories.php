@@ -19,7 +19,7 @@
                         $p_cat_title = $row['p_cat_title']; 
                         $p_cat_desc = $row['p_cat_desc']; 
 
-                echo "<li> <a href='product_categories.php?pro_cat_get=$p_cat_id'>$p_cat_title </a> </li> "; 
+                echo "<li> <a href='shop.php?pro_cat_get=$p_cat_id'>$p_cat_title </a> </li> "; 
                         
                         ?> 
                                      

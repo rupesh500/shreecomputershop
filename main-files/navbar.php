@@ -3,11 +3,11 @@
                     <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                         <!-- ============================================================= LOGO ============================================================= -->
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="index.php">
                             
                             
 <!--                           WEBSITE LOGO HERE-->
-                               <img src="" alt="logo" height="54px" width="223px">
+                              <img src="images/logo.png" class="logo-img" alt="logo" width="242px" height="100px">
                       
                                 
                             </a>
