@@ -34,14 +34,6 @@
             <br><br>
 
 
-
-
-
-
-
-
-
-
             <!-- ================================== TOP NAVIGATION ================================== -->
             <div class="side-menu animate-dropdown">
                 <div class="head"><i class="fa fa-list"></i>Categories</div>
@@ -71,6 +63,20 @@
             <!-- ================================== TOP NAVIGATION : END ================================== -->
 
             <br><br>
+
+<?php if(isset($_GET['pro_cat_get'])){
+    
+    $p_cat_get = $_GET['pro_cat_get'];
+    
+    $get_product_cat = "SELECT * FROM product_categories WHERE p_cat_id='$p_cat_get' ";
+    $result_get = mysqli_query($connection,$get_product_cat);
+    
+} 
+            
+            
+            ?>
+
+
 
 
 

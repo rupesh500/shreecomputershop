@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php include "database/db.php"; ?>
+<?php include "function.php"; ?>
+
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <?php include "main-files/header.php"; ?>
@@ -53,10 +55,7 @@ if(!isset($_GET['pro_cat_get'])){
   }  
    
 }    
-    
-    
-    
-    ?>
+?>
 
 
 
@@ -338,6 +337,8 @@ notebooks
 
 <div class="col-xs-12 col-sm-9 no-margin wide sidebar">
 
+<!--PRODUCT FOUND OR NOT HEADING DYNAMIC-->
+   <?php getproduct_cat_pro(); ?>  
 
 <section id="gaming">
 <div class="grid-list-products">
@@ -379,6 +380,8 @@ notebooks
 
 
 
+
+<!--SHOW ALL PRODUCT WHEN CLICJK SHOP IN NAVBAR NOT A CATEGORY-->
 <?php 
     
   if(!isset($_GET['pro_cat_get'])){
@@ -485,10 +488,7 @@ notebooks
         <li> <a href='shop.php?page=".$i."'>".$i."</a> </li>
        
        ";
-      
-      
 
-  
   }
   
   
@@ -497,12 +497,7 @@ notebooks
        
        ";
 
-   
-
-   
-   
-   
-   
+  
    
    
    }} ?>
@@ -513,7 +508,11 @@ notebooks
 <li><a href="#">3</a></li>
 <li><a href="#">4</a></li>
 <li><a href="#">next</a></li>
+
 -->
+
+
+
 </ul>
 </div>
 
