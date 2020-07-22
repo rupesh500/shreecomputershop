@@ -18,18 +18,18 @@
 <!--           MAIN NAVBAR HERE-->
 <?php include "main-files/navbar.php"; ?>
 
-<!-- ============================================================= HEADER : END ============================================================= -->
+<!-- ============================================================= HEADER : END ==================== ========================================= -->
 
 <div id="top-mega-nav">
 <div class="container">
 <nav>
 <ul class="inline">
+<!--
 <li class="dropdown le-dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 <i class="fa fa-list"></i> shop by department
 </a>
 
-<!--
 <ul class="dropdown-menu">
 <li><a href="#">Computer Cases & Accessories</a></li>
 <li><a href="#">CPUs, Processors</a></li>
@@ -42,23 +42,21 @@
 <li><a href="#">Motherboard &amp; CPU Combos</a></li>
 <li><a href="#">Motherboard Components</a></li>
 </ul>
--->
 </li>
+-->
 
 
 <?php
 if(!isset($_GET['pro_cat_get'])){
   if(!isset($_GET['cat_get'])){
       
-   echo "SHOP";   
+   echo "";   
       
   }  
    
 }
 else{
-    
-    
-    
+  
 }    
     
 ?>
@@ -70,212 +68,102 @@ else{
 
 </div><!-- /.container -->
 </div><!-- /#top-mega-nav -->
+
+
+
+
+
 <!-- ========================================= BREADCRUMB : END ========================================= -->
 </div>
 
 <section id="category-grid">
 <div class="container">
 <!-- ========================================= SIDEBAR ========================================= -->
-<div class="col-xs-12 col-sm-3 no-margin sidebar narrow">
-<!-- ========================================= PRODUCT FILTER ========================================= -->
+<div class="col-xs-12 col-sm-4 col-md-3 sidemenu-holder">
 
 
 
-<div class="widget">
-<h1>Product Filters</h1>
-<div class="body bordered">
 
-<div class="category-filter">
-<h2>Brands</h2>
-<hr>
-<ul>
-<li><input checked="checked" class="le-checkbox" type="checkbox"  /> <label>Samsung</label> <span class="pull-right">(2)</span></li>
-<li><input  class="le-checkbox" type="checkbox" /> <label>Dell</label> <span class="pull-right">(8)</span></li>
-<li><input  class="le-checkbox" type="checkbox" /> <label>Toshiba</label> <span class="pull-right">(1)</span></li>
-<li><input  class="le-checkbox" type="checkbox" /> <label>Apple</label> <span class="pull-right">(5)</span></li>
-</ul>
-</div><!-- /.category-filter -->
+            <!-- ================================== TOP NAVIGATION ================================== -->
+            <div class="side-menu animate-dropdown">
+                <div class="head"><i class="fa fa-list"></i>Product Categories</div>
+                <nav class="yamm megamenu-horizontal" role="navigation">
+                    <ul class="nav">
+                        <li> <a href="shop.php?pro_cat_get=1">MOTHERBORD </a> </li>  
+                                     
+                                        
+                                      <li> <a href="shop.php?pro_cat_get=2">MOUSE </a> </li>  
+                                     
+                                        
+                                      <li> <a href="shop.php?pro_cat_get=3">ANTIVIRUS </a> </li>  
+                                     
+                                        
+                                      <li> <a href="shop.php?pro_cat_get=4">ROUTERS </a> </li>  
+                                     
+                                        
+                                      <li> <a href="shop.php?pro_cat_get=5">HDD </a> </li>  
+                                     
+                                        
+                                      <li> <a href="shop.php?pro_cat_get=6">WIFI_DONGLES </a> </li>  
+                                     
+                                        
+                                      <li> <a href="shop.php?pro_cat_get=7">KEYBORDS </a> </li>  
+                                     
+                                        
+                                      <!--                        <li><a href="">Buy this Theme</a></li>-->
+                    </ul><!-- /.nav -->
+                </nav><!-- /.megamenu-horizontal -->
+            </div><!-- /.side-menu -->
+            <!-- ================================== TOP NAVIGATION : END ================================== -->
 
-<div class="price-filter">
-<h2>Price</h2>
-<hr>
-<div class="price-range-holder">
-
-<input type="text" class="price-slider" value="" >
-
-<span class="min-max">
-Price: $89 - $2899
-</span>
-<span class="filter-button">
-<a href="#">Filter</a>
-</span>
-</div>
-</div><!-- /.price-filter -->
-
-</div><!-- /.body -->
-</div><!-- /.widget -->
-<!-- ========================================= PRODUCT FILTER : END ========================================= -->
+            <br><br>
 
 
+            <!-- ================================== TOP NAVIGATION ================================== -->
+            <div class="side-menu animate-dropdown">
+                <div class="head"><i class="fa fa-list"></i>Categories</div>
+                <nav class="yamm megamenu-horizontal" role="navigation">
+                    <ul class="nav">
+                
+                   
+                      <li> <a href="shop.php?cat_get=1">Mobile </a> </li>  
+                                     
+                                        
+                                      
+                      <li> <a href="shop.php?cat_get=2">laptops </a> </li>  
+                                     
+                                        
+                                      
+                      <li> <a href="shop.php?cat_get=3">TV </a> </li>  
+                                     
+                                        
+                                      
+                      <li> <a href="shop.php?cat_get=4">AC </a> </li>  
+                                     
+                                        
+                                                          </ul><!-- /.nav -->
+                </nav><!-- /.megamenu-horizontal -->
+            </div><!-- /.side-menu -->
+            <!-- ================================== TOP NAVIGATION : END ================================== -->
 
-<!-- ========================================= LINKS ========================================= -->
-<div class="widget">
-<h1 class="border">information</h1>
-<div class="body">
-<ul class="le-links">
-<li><a href="#">delivery</a></li>
-<li><a href="#">secure payment</a></li>
-<li><a href="#">our stores</a></li>
-<li><a href="#">contact</a></li>
-</ul><!-- /.le-links -->
-</div><!-- /.body -->
-</div><!-- /.widget -->
-<!-- ========================================= LINKS : END ========================================= -->
+            <br><br>
 
-<div class="widget">
-<div class="simple-banner">
-<a href="#"><img alt="" class="img-responsive" src="assets/images/blank.gif" data-echo="assets/images/banners/banner-simple.jpg" /></a>
-</div>
-</div>
 
-<!-- ========================================= FEATURED PRODUCTS ========================================= -->
-<div class="widget">
-<h1 class="border">Featured Products</h1>
-<ul class="product-list">
 
-<li class="sidebar-product-list-item">
-<div class="row">
-<div class="col-xs-4 col-sm-4 no-margin">
-<a href="#" class="thumb-holder">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-01.jpg" />
-</a>
-</div>
-<div class="col-xs-8 col-sm-8 no-margin">
-<a href="#">Netbook Acer </a>
-<div class="price">
-<div class="price-prev">$2000</div>
-<div class="price-current">$1873</div>
-</div>
-</div>
-</div>
-</li><!-- /.sidebar-product-list-item -->
 
-<li class="sidebar-product-list-item">
-<div class="row">
-<div class="col-xs-4 col-sm-4 no-margin">
-<a href="#" class="thumb-holder">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-02.jpg" />
-</a>
-</div>
-<div class="col-xs-8 col-sm-8 no-margin">
-<a href="#">PowerShot Elph 115 16MP Digital Camera</a>
-<div class="price">
-<div class="price-prev">$2000</div>
-<div class="price-current">$1873</div>
-</div>
-</div>
-</div>
-</li><!-- /.sidebar-product-list-item -->
 
-<li class="sidebar-product-list-item">
-<div class="row">
-<div class="col-xs-4 col-sm-4 no-margin">
-<a href="#" class="thumb-holder">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-03.jpg" />
-</a>
-</div>
-<div class="col-xs-8 col-sm-8 no-margin">
-<a href="#">PowerShot Elph 115 16MP Digital Camera</a>
-<div class="price">
-<div class="price-prev">$2000</div>
-<div class="price-current">$1873</div>
-</div>
-</div>
-</div>
-</li><!-- /.sidebar-product-list-item -->
 
-<li class="sidebar-product-list-item">
-<div class="row">
-<div class="col-xs-4 col-sm-4 no-margin">
-<a href="#" class="thumb-holder">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-01.jpg" />
-</a>
-</div>
-<div class="col-xs-8 col-sm-8 no-margin">
-<a href="#">Netbook Acer </a>
-<div class="price">
-<div class="price-prev">$2000</div>
-<div class="price-current">$1873</div>
-</div>
-</div>
-</div>
-</li><!-- /.sidebar-product-list-item -->
 
-<li class="sidebar-product-list-item">
-<div class="row">
-<div class="col-xs-4 col-sm-4 no-margin">
-<a href="#" class="thumb-holder">
-<img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-02.jpg" />
-</a>
-</div>
-<div class="col-xs-8 col-sm-8 no-margin">
-<a href="#">PowerShot Elph 115 16MP Digital Camera</a>
-<div class="price">
-<div class="price-prev">$2000</div>
-<div class="price-current">$1873</div>
-</div>
-</div>
-</div>
-</li><!-- /.sidebar-product-list-item -->
 
-</ul><!-- /.product-list -->
-</div><!-- /.widget -->
-<!-- ========================================= FEATURED PRODUCTS : END ========================================= -->
-</div>
-<!-- ========================================= SIDEBAR : END ========================================= -->
+
+        </div>
+
+
+
 
 <!-- ========================================= CONTENT ========================================= -->
 
-<div class="col-xs-12 col-sm-9 no-margin wide sidebar">
-
-<!--PRODUCT FOUND OR NOT HEADING DYNAMIC-->
-   <?php
-    
-    
-  if(isset($_GET['pro_cat_get'])){
-     
-   $p_cat_id = $_GET['pro_cat_get'];
-       
-   $get_p_cat_query = "SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";    
-     $result = mysqli_query($connection,$get_p_cat_query); 
-       $row_p_cat = mysqli_fetch_array($result);
-       $p_cat_title = $row_p_cat['p_cat_title'];
-        $p_cat_desc = $row_p_cat['p_cat_desc'];
-       
-       
-       
-       $get_product = "SELECT * FROM products WHERE product_Cat_id ='$p_cat_id'";
-       $run_get_product = mysqli_query($connection,$get_product);
-      $count=mysqli_num_rows($run_get_product );
-       if($count==0){
-        echo "<h1>No Product Found in This Categories</h1>";   
-   
-       }
-       else{
- 
-           echo "
-           <h1>$p_cat_title</h1>
-           <p>$p_cat_desc</p>
-           ";
-       }
-   
-   } 
-    
- 
-    
-    
-    ?>  
-
+<div class="col-xs-12 col-sm-8 col-md-9 homebanner-holder">
 <section id="gaming">
 <div class="grid-list-products">
 <h2 class="section-title">Gaming</h2>
@@ -315,71 +203,6 @@ Price: $89 - $2899
 
 
 
-<?php 
-
-    
-   if(isset($_GET['pro_cat_get'])){
-     $get_cat_id = $_GET['pro_cat_get']; 
-
-$get_product_cli = "SELECT * FROM products WHERE product_cat_id='$get_cat_id' "; 
-       $get_product_r = mysqli_query($connection,$get_product_cli);
-      while($row = mysqli_fetch_array($get_product_r)){
-     
-            $product_id22 = $row['product_id']; 
-            $product_cat_id22 = $row['product_cat_id']; 
-            $cat_id22 = $row['cat_id'];
-            $date22 = $row['date']; 
-            $product_title22 = $row['product_title']; 
-            $product_img22 = $row['product_img1']; 
-            $product_prize22 = $row['product_prize']; 
-            $product_desc22 = $row['product_desc']; 
-            $product_keyword22 = $row['product_keyword'];   
-  
-
-    ?>
-
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon red"><span>sale</span></div>
-<div class="image">
-<img alt="" src="admin/product_images/<?php echo $product_img22; ?>" data-echo="admin/product_images/<?php echo $product_img22; ?>" />
-</div>
-<div class="body">
-<div class="label-discount green">-50% sale</div>
-<div class="title">
-<a href=""><?php echo $product_title22; ?></a>
-</div>
-<div class="brand"><?php echo $product_keyword22; ?></div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">RS <?php echo $product_prize22; ?></div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<!--<a class="btn-add-to-compare" href="#">compare</a>-->
-</div>
-</div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
-
-
-
-
-
-<?php } } ?>
-
-
-
-
-
-
-
-
 <!--SHOW ALL PRODUCT WHEN CLICJK SHOP IN NAVBAR NOT A CATEGORY-->
 <?php 
     
@@ -412,53 +235,54 @@ $get_product_cli = "SELECT * FROM products WHERE product_cat_id='$get_cat_id' ";
             $product_desc = $row['product_desc'];
             $product_keyword = $row['product_keyword'];
            
+           
+    
+           
+ echo "
  
  
+<div class='col-xs-12 col-sm-4 no-margin product-item-holder hover'>
+<div class='product-item'>
+<div class='ribbon red'><span>sale</span></div>
+<div class='image'>
+<img alt='' src='admin/product_images/$product_img1' ?>' <data-echo='admin/product_images/ $product_img1 ' />
+</div>
+<div class='body'>
+<div class='label-discount green'>-50% sale</div>
+<div class='title'>
+<a href=''>$product_title</a>
+</div>
+<div class='brand'>$product_keyword</div>
+</div>
+<div class='prices'>
+<div class='price-prev'>$1399.00</div>
+<div class='price-current pull-right'>RS $product_prize</div>
+</div>
+<div class='hover-area'>
+<div class='add-cart-button'>
+<a href='single-product.html' class='le-button'>add to cart</a>
+</div>
+<div class='wish-compare'>
+<a class='btn-add-to-wishlist' href='#'>add to wishlist</a>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+ 
+ ";
+    
+           
+  }
     
     ?>
 
-
-
-<div class="col-xs-12 col-sm-4 no-margin product-item-holder hover">
-<div class="product-item">
-<div class="ribbon red"><span>sale</span></div>
-<div class="image">
-<img alt="" src="admin/product_images/<?php echo $product_img1; ?>" data-echo="admin/product_images/<?php echo $product_img1; ?>" />
-</div>
-<div class="body">
-<div class="label-discount green">-50% sale</div>
-<div class="title">
-<a href=""><?php echo $product_title; ?></a>
-</div>
-<div class="brand"><?php echo $product_keyword; ?></div>
-</div>
-<div class="prices">
-<div class="price-prev">$1399.00</div>
-<div class="price-current pull-right">RS <?php echo $product_prize; ?></div>
-</div>
-<div class="hover-area">
-<div class="add-cart-button">
-<a href="single-product.html" class="le-button">add to cart</a>
-</div>
-<div class="wish-compare">
-<a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-<!--<a class="btn-add-to-compare" href="#">compare</a>-->
 </div>
 </div>
-</div><!-- /.product-item -->
-</div><!-- /.product-item-holder -->
-
-
-
-
-
-<?php } ?>
-
-
-
-
-</div><!-- /.row -->
-</div><!-- /.product-grid-holder -->
 
 
 
@@ -501,18 +325,17 @@ $get_product_cli = "SELECT * FROM products WHERE product_cat_id='$get_cat_id' ";
    
    }} ?>
 
-<!--
-<li class="current"><a  href="#">1</a></li>
-<li><a href="#">2</a></li>
-<li><a href="#">3</a></li>
-<li><a href="#">4</a></li>
-<li><a href="#">next</a></li>
-
--->
 
 
 
 </ul>
+
+ <?php product_found_or_not_when_click_shop();
+   getcategory_Data_shop_page(); 
+    ?>
+
+
+
 </div>
 
 <div class="col-xs-12 col-sm-6">

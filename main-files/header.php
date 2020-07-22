@@ -61,7 +61,7 @@
       .price-prev{
           visibility: hidden!important;
       } 
-      
+  
       
 /*
       .main-content-img{
