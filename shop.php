@@ -458,12 +458,54 @@ notebooks
 </div><!-- /.row -->
 </div><!-- /.product-grid-holder -->
 
+
+
+<br><br><br>
 <div class="pagination-holder">
 <div class="row">
 
 <div class="col-xs-12 col-sm-6 text-left">
 <ul class="pagination ">
-<?php }} ?>
+<?php
+   
+ $query = "SELECT * FROm products";
+       $select_all = mysqli_query($connection,$query);
+       $total_record = mysqli_num_rows($select_all);
+       $total_pages=ceil($total_record/$per_page);
+       
+   echo "
+   <li> <a href='shop.php?page=1'>".'first page'."</a> </li>
+   
+      ";
+   
+  for($i=1; $i<=$total_pages; $i++){
+  
+       
+  echo "  
+        <li> <a href='shop.php?page=".$i."'>".$i."</a> </li>
+       
+       ";
+      
+      
+
+  
+  }
+  
+  
+        echo "  
+        <li> <a href='shop.php?page=$total_pages'>".'Last page'."</a> </li>
+       
+       ";
+
+   
+
+   
+   
+   
+   
+   
+   
+   }} ?>
 
 <!--
 <li class="current"><a  href="#">1</a></li>
