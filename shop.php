@@ -260,7 +260,7 @@ else{
 </div>
 <div class='hover-area'>
 <div class='add-cart-button'>
- <a class='le-button' href='detailes.php?get_d=<?php echo $product_id; ?>'> add to cart</a>
+ <a class='le-button' href='detailes.php?get_d=$product_id'> add to cart</a>
 
 </div>
 <div class='wish-compare'>
