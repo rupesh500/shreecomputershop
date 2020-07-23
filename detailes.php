@@ -154,9 +154,6 @@ $product_prize = $row['product_prize'];
 $product_desc = $row['product_desc']; 
 $product_keyword = $row['product_keyword']; 
 
-
-
-
 ?>
 
 <div id="single-product" class="row">
@@ -278,10 +275,51 @@ $product_keyword = $row['product_keyword'];
 <?php }} ?>		
 
 
+
+
+
+
+
+
+
+
+
+
 <!-- /.row #single-product -->
 <!-- ========================================= SINGLE PRODUCT TAB ========================================= -->
 <section id="single-product-tab">
 <div class="no-container">
+
+
+<?php
+    if(isset($_GET['get_d'])){
+        
+     $get_desc_id = $_GET['get_d'];
+    $get_desc_query = "SELECT * FROM products WHERE product_id='$get_desc_id'"; 
+$run_desc_query=mysqli_query($connection,$get_desc_query);
+
+   $result_desc = mysqli_fetch_array($run_desc_query);
+   $product_id = $result_desc['product_id'];  
+   $product_cat_id = $result_desc['product_cat_id'];      
+   $date = $result_desc['date']; 
+   $product_title = $result_desc['product_title'];
+   $product_prize = $result_desc['product_prize']; 
+   $product_desc = $result_desc['product_desc']; 
+   $product_keyword = $result_desc['product_keyword'];    
+        
+ $product_cat_desc = "SELECT * FROM product_categories WHERE p_cat_id='$product_cat_id'";  
+   $run_cat = mysqli_query($connection,$product_cat_desc);     
+     $row_p_cat = mysqli_fetch_array($run_cat);
+        $p_cat_id = $row_p_cat['p_cat_id'];
+        $p_cat_title = $row_p_cat['p_cat_title'];
+        $p_cat_desc = $row_p_cat['p_cat_desc'];
+
+    }
+    
+    ?>
+
+
+
 <div class="tab-holder">
 <ul class="nav nav-tabs simple" >
 <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
@@ -291,28 +329,33 @@ $product_keyword = $row['product_keyword'];
 <!-- /.nav-tabs -->
 <div class="tab-content">
 <div class="tab-pane active" id="description">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet porttitor eros. Praesent quis diam placerat, accumsan velit interdum, accumsan orci. Nunc libero sem, elementum in semper in, sollicitudin vitae dolor. Etiam sed tempus nisl. Integer vel diam nulla. Suspendisse et aliquam est. Nulla molestie ante et tortor sollicitudin, at elementum odio lobortis. Pellentesque neque enim, feugiat in elit sed, pharetra tempus metus. Pellentesque non lorem nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-<p>Sed consequat orci vel rutrum blandit. Nam non leo vel risus cursus porta quis non nulla. Vestibulum vitae pellentesque nunc. In hac habitasse platea dictumst. Cras egestas, turpis a malesuada mollis, magna tortor scelerisque urna, in pellentesque diam tellus sit amet velit. Donec vel rhoncus nisi, eget placerat elit. Phasellus dignissim nisl vel lectus vehicula, eget vehicula nisl egestas. Duis pretium sed risus dapibus egestas. Nam lectus felis, sodales sit amet turpis se.</p>
+<p><?php echo $product_desc; ?></p>
 <div class="meta-row">
 <div class="inline">
-<label>SKU:</label>
-<span>54687621</span>
+<label>Product ID:<a href="shop.php?pro_cat_get=<?php echo $p_cat_id; ?>">&nbsp;<?php echo $p_cat_id; ?></a></label>
+
+
+
 </div>
 <!-- /.inline -->
 <span class="seperator">/</span>
 <div class="inline">
 <label>categories:</label>
-<span><a href="#">-50% sale</a>,</span>
+    <span><a href="shop.php?pro_cat_get=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a></span>
+<!--
 <span><a href="#">gaming</a>,</span>
 <span><a href="#">desktop PC</a></span>
+-->
 </div>
 <!-- /.inline -->
 <span class="seperator">/</span>
 <div class="inline">
 <label>tag:</label>
-<span><a href="#">fast</a>,</span>
+<span><a href="#"><?php echo $product_keyword; ?></a>,</span>
+<!--
 <span><a href="#">gaming</a>,</span>
 <span><a href="#">strong</a></span>
+-->
 </div>
 <!-- /.inline -->
 </div>
@@ -345,24 +388,24 @@ $product_keyword = $row['product_keyword'];
 <!-- /.tabled-data -->
 <div class="meta-row">
 <div class="inline">
-<label>SKU:</label>
-<span>54687621</span>
+<label>Product ID:<a href="shop.php?pro_cat_get=<?php echo $p_cat_id; ?>">&nbsp;<?php echo $p_cat_id; ?></a></label>
+<!--<span>54687621</span>-->
 </div>
 <!-- /.inline -->
 <span class="seperator">/</span>
 <div class="inline">
+
+
 <label>categories:</label>
-<span><a href="#">-50% sale</a>,</span>
-<span><a href="#">gaming</a>,</span>
-<span><a href="#">desktop PC</a></span>
+    <span><a href="shop.php?pro_cat_get=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a></span>
+
+
 </div>
 <!-- /.inline -->
 <span class="seperator">/</span>
 <div class="inline">
 <label>tag:</label>
-<span><a href="#">fast</a>,</span>
-<span><a href="#">gaming</a>,</span>
-<span><a href="#">strong</a></span>
+<span><a href="#"><?php echo $product_keyword; ?></a>,</span>
 </div>
 <!-- /.inline -->
 </div>
@@ -524,10 +567,41 @@ $product_keyword = $row['product_keyword'];
 <!-- /.tab-content -->
 </div>
 <!-- /.tab-holder -->
+
+
+
+
+
+
 </div>
 <!-- /.container -->
 </section>
 <!-- /#single-product-tab -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- ========================================= SINGLE PRODUCT TAB : END ========================================= -->
 <!-- ========================================= RECENTLY VIEWED ========================================= -->
 
