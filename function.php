@@ -155,17 +155,14 @@ $count=mysqli_num_rows($run_get_product );
 if($count==0)
 {
 echo "<h1>No Product Found in This Categories</h1>";   
-
 }
 else{
-
 echo "
 <h1>$p_cat_title</h1>
 <p  style='padding: 0px 10px 0px 10px;'>$p_cat_desc</p>
 <br>
 ";
-}
-    
+}    
 while($row_products = mysqli_fetch_array($run_get_product)){
   $product_id = $row_products['product_id'];  
     $product_cat_id = $row_products['product_cat_id']; 
@@ -178,11 +175,8 @@ while($row_products = mysqli_fetch_array($run_get_product)){
     
     $product_prize = $row_products['product_prize']; 
     $product_desc = $row_products['product_desc']; 
-     $product_keyword = $row_products['product_keyword']; 
-    
-    echo "
- 
- 
+     $product_keyword = $row_products['product_keyword'];    
+    echo " 
 <div class='col-xs-12 col-sm-4 no-margin product-item-holder hover'>
 <div class='product-item'>
 <div class='ribbon red'><span>sale</span></div>

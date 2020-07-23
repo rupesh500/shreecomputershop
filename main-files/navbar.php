@@ -85,7 +85,22 @@
                                             </span>
                                         </div>
                                     </a>
+                                    
+<!--                           SHOW  all cart item in navbar slide with imagess  query        -->
+                         <?php 
+                       $ip_add = getuser_ip();
+                                    
+                                    
 
+                                    
+                                    
+                                    
+                         ?>           
+                                    
+
+                                   
+                                   
+                                   
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="basket-item">
@@ -104,39 +119,8 @@
                                             </div>
                                         </li>
 
-                                        <li>
-                                            <div class="basket-item">
-                                                <div class="row">
-                                                    <div class="col-xs-4 col-sm-4 no-margin text-center">
-                                                        <div class="thumb">
-                                                            <img alt="" src="assets/images/products/product-small-01.jpg" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-8 col-sm-8 no-margin">
-                                                        <div class="title">Blueberry</div>
-                                                        <div class="price">$270.00</div>
-                                                    </div>
-                                                </div>
-                                                <a class="close-btn" href="#"></a>
-                                            </div>
-                                        </li>
 
-                                        <li>
-                                            <div class="basket-item">
-                                                <div class="row">
-                                                    <div class="col-xs-4 col-sm-4 no-margin text-center">
-                                                        <div class="thumb">
-                                                            <img alt="" src="assets/images/products/product-small-01.jpg" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-8 col-sm-8 no-margin">
-                                                        <div class="title">Blueberry</div>
-                                                        <div class="price">$270.00</div>
-                                                    </div>
-                                                </div>
-                                                <a class="close-btn" href="#"></a>
-                                            </div>
-                                        </li>
+                            
 
 
                                         <li class="checkout">
