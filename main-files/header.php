@@ -9,6 +9,8 @@ error_reporting(E_ALL);
      
      <head>
       <?php include "database/db.php"; ?>
+       <?php include "function.php"; ?>
+   
        
         <!-- Meta -->
         <meta charset="utf-8">

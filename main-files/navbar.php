@@ -65,11 +65,12 @@
                             </div>
 
                             <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+                           
                             <div class="top-cart-holder dropdown animate-dropdown">
                                 <div class="basket">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                         <div class="basket-item-count">
-                                            <span class="count">3</span>
+                                            <span class="count"><?php items(); ?></span>
                                             <img src="assets/images/icon-cart.png" alt="" />
                                         </div>
 

@@ -68,10 +68,24 @@ $run_check = mysqli_query($connection,$check_product);
 
 
 
+//item count in Cart 
+function items(){
+    global $connection;
+    
+    $ip_add = getuser_ip();
+    $item_count_query = "SELECT * FROM cart WHERE ip_add='$ip_add' ";
+    $count_result = mysqli_query($connection,$item_count_query);
+    $count = mysqli_num_rows($count_result);
+    
+    echo $count;
+    
+    
+    
+    
+}
 
 
-
-
+//item count in cart end
 
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php include "database/db.php"; ?>
-<?php include "function.php"; ?>
+
 
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
