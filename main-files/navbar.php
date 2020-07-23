@@ -56,12 +56,16 @@
                     <div class="col-xs-12 col-sm-12 col-md-3 top-cart-row no-margin">
                         <div class="top-cart-row-container">
                             <div class="wishlist-compare-holder">
+<!--
                                 <div class="wishlist ">
                                     <a href="#"><i class="fa fa-heart"></i> wishlist <span class="value">(21)</span> </a>
                                 </div>
+-->
+<!--
                                 <div class="compare">
                                     <a href="#"><i class="fa fa-exchange"></i> compare <span class="value">(2)</span> </a>
                                 </div>
+-->
                             </div>
 
                             <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
@@ -77,7 +81,7 @@
                                         <div class="total-price-basket">
                                             <span class="lbl">your cart:</span>
                                             <span class="total-price">
-                                                <span class="sign">$</span><span class="value">3219,00</span>
+                                                <span class="sign">RS:</span><span class="value"><?php total_prize(); ?></span>
                                             </span>
                                         </div>
                                     </a>

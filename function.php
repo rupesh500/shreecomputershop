@@ -87,12 +87,43 @@ function items(){
 
 //item count in cart end
 
+//DELETE FROM THE CART
 
 
 
 
 
+//TOTLAL PRIZE START
+function total_prize(){
+global $connection;
+    
+    $ip_add = getuser_ip();
+    $total=0;
+    $select_cart_query = "SELECT * FROM cart WHERE ip_add='$ip_add' ";
+    $run_cart_query = mysqli_query($connection,$select_cart_query);
+    while($row_c = mysqli_fetch_array($run_cart_query)){
+    
+        $pro_id = $row_c['p_id'];
+       $qty = $row_c['qty'];
+        
+     $product_select_query = "SELECT * FROM products WHERE product_id='$pro_id'";   
+     $run_product_query = mysqli_query($connection,$product_select_query);
+      while($row_product = mysqli_fetch_array($run_product_query)){
+      $sub_total=$row_product['product_prize'] *  $qty;    
+       $total += $sub_total;   
+      }  
+   
+        
+    }
+    
+    echo $total;
+    
+    
+    
+}
 
+
+//TOTAL PRIZE FUNCTION END
 
 
 

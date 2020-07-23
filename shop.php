@@ -484,14 +484,6 @@ Showing <span>1-9</span> of <span>11</span> results
 
 
 
-
-
-
-
-
-
-
-
 </ul><!-- /.pagination -->
 </div>
 <div class="col-xs-12 col-sm-6">
