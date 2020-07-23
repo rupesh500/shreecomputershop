@@ -738,8 +738,13 @@ header {
         padding: 11px 28px;
         position: relative; }
         header .top-cart-row .top-cart-holder .basket-item .thumb {
-          border: 1px solid #e0e0e0;
-          text-align: center; }
+             /* border: 1px solid #e0e0e0; */
+    text-align: center;
+    /* padding: 2px; */
+    display: flex;
+    width: 64px;
+
+}
         header .top-cart-row .top-cart-holder .basket-item .title {
           font-weight: 100;
           line-height: 26px; }

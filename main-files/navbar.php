@@ -86,33 +86,60 @@
                                         </div>
                                     </a>
                                     
-<!--                           SHOW  all cart item in navbar slide with imagess  query        -->
-                         <?php 
-                       $ip_add = getuser_ip();
-                                    
-                                    
-
-                                    
-                                    
-                                    
-                         ?>           
-                                    
-
-                                   
-                                   
+                            
+                                  
                                    
                                     <ul class="dropdown-menu">
+                                      
+                                  <!--                           SHOW  all cart item in navbar slide with imagess  query        -->
+                      
+                      
+                 <?php 
+                                    
+ $ip_add = getuser_ip();                        
+ $select_from_cat = "SELECT * FROM cart WHERE ip_add='$ip_add'";
+  $cart_query_run = mysqli_query($connection,$select_from_cat);
+    $cart_count = mysqli_num_rows($cart_query_run);                                
+                                    
+                   
+  ?>                     
+         
+     <?php
+               while($row = mysqli_fetch_array($cart_query_run)){
+                $p_id = $row['p_id'];
+                $qty = $row['qty'];
+//                $product_img1 = $row['product_img1'];
+//               $product_prize = $row['product_prize'];
+     
+         
+         $product_select_query = "SELECT * FROM products WHERE product_id='$p_id'";
+            $result = mysqli_query($connection,$product_select_query); 
+            while($row = mysqli_fetch_array($result)){
+                
+                $product_title = $row['product_title'];
+                $product_img1 = $row['product_img1'];
+                   $product_prize = $row['product_prize'];
+                
+        
+                   
+                                    
+      ?>     
+                                      
+                                      
+                                      
+                                      
+                                       
                                         <li>
                                             <div class="basket-item">
                                                 <div class="row">
                                                     <div class="col-xs-4 col-sm-4 no-margin text-center">
                                                         <div class="thumb">
-                                                            <img alt="" src="assets/images/products/product-small-01.jpg" />
+                                                            <img alt="" src="admin/product_images/<?php echo $product_img1; ?>" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-8 col-sm-8 no-margin">
-                                                        <div class="title">Blueberry</div>
-                                                        <div class="price">$270.00</div>
+                                                        <div class="title"><?php echo $product_title; ?></div>
+                                                        <div class="price">RS:<?php echo $product_prize; ?></div>
                                                     </div>
                                                 </div>
                                                 <a class="close-btn" href="#"></a>
@@ -120,6 +147,7 @@
                                         </li>
 
 
+                           <?php } } ?>
                             
 
 
@@ -137,6 +165,9 @@
                                         </li>
 
                                     </ul>
+                                    
+                                    
+                                    
                                 </div><!-- /.basket -->
                             </div><!-- /.top-cart-holder -->
                         </div><!-- /.top-cart-row-container -->

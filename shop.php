@@ -445,6 +445,9 @@ Showing <span>1-9</span> of <span>11</span> results
 <ul class="pagination">
 
 
+
+
+
 <?php
    
  $query = "SELECT * FROM products";
