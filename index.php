@@ -11,16 +11,9 @@
     }
 </style>
 
-
-
-
 <body>
 
-
-
-
     <div class="wrapper">
-
 
         <!--        TOPNAVAR-->
         <?php include "main-files/top-navbar.php"; ?>
