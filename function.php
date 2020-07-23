@@ -1,7 +1,97 @@
 <?php include "database/db.php"; ?>
 
 
-<?php 
+<?php
+
+
+//FETCH USER IP ADDRESS 
+function getuser_ip(){
+  global $connection;
+    
+ switch (true){
+     case (!empty($_SERVER['HTTP_X_REAL_IP'])) : return $_SERVER['HTTP_X_REAL_IP'];
+         
+     case (!empty($_SERVER['HTTP_CLIENT_IP'])) : return $_SERVER['HTTP_CLIENT_IP'];
+         
+    case (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) : return $_SERVER['HTTP_X_FORWARDED_FOR'];
+         
+       default : return $_SERVER['REMOTE_ADDR'];  
+         
+ }   
+    
+    
+}
+
+//FETCH USER IP ADDRESS  END 
+
+//FUNCTION ADD TO CART HERE
+
+
+
+function add_to_cart(){
+    global $connection;
+
+  if(isset($_GET['add_cart'])){
+        
+   $cart_Added = $_GET['add_cart']; 
+     $ip_address = getuser_ip();
+     $product_qty = $_POST['product_qty'];
+        $size = $_POST['size']; 
+  $check_product = "SELECT * FROM cart WHERE ip_add='$ip_address' AND p_id='$cart_Added'";    
+$run_check = mysqli_query($connection,$check_product);
+ 
+  if(mysqli_num_rows($run_check)>0){
+      
+  echo "<script> alert('This Product is Already added in Cart') </script>";    
+   echo "<script>window.open('detailes.php?get_d=$cart_Added','_self')  </script>"; 
+   
+  } 
+         
+  else{
+      
+   $store_query = "INSERT INTO cart(p_id,ip_add,qty,size) VALUES('$cart_Added','$ip_address','$product_qty','$size') ";   
+   $insert_result = mysqli_query($connection,$store_query); 
+      
+      echo "<script> alert('Your Product is Added to Cart') </script>";    
+   echo "<script>window.open('detailes.php?get_d=$cart_Added','_self')  </script>";   
+      
+      
+      
+  }      
+        
+        
+        
+  }
+   
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function product_found_or_not_when_click_shop(){  
 global $connection;

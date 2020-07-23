@@ -125,7 +125,7 @@ else{
 
 
 
-
+<?php add_to_cart(); ?>
 <!--************************8888888MAIN CONTENT IN DETAILS PAGE**************************8-->
 <!--///////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -249,16 +249,30 @@ $product_keyword = $row['product_keyword'];
 <div class="price-current">RS: <?php echo $product_prize; ?></div>
 <!--<div class="price-prev">$2199.00</div>-->
 </div>
+
+<form action="detailes.php?add_cart=<?php echo $product_id; ?> " method="post">
 <div class="qnt-holder">
 <div class="le-quantity">
-<form>
-<a class="minus" href="#reduce"></a>
-<input name="quantity" readonly="readonly" type="text" value="1" />
-<a class="plus" href="#add"></a>
+
+<select name="product_qty" id="" class="form-control">
+  <option value="">1</option>  
+   <option value="">2</option>  
+    <option value="">3</option>  
+    <option value="">4</option>  
+    <option value="">5</option>  
+
+</select>
+
+
+</div>
+<!--<a id="addto-cart" href="index.php?add_cart=<?php// echo $product_id; ?>" class="le-button huge">add to cart</a>-->
+
+<button class="le-button huge" name="submit" type="sybmit">add to cart</button>
+
+
+</div>
 </form>
-</div>
-<a id="addto-cart" href="cart.html" class="le-button huge">add to cart</a>
-</div>
+
 <!-- /.qnt-holder -->
 </div>
 <!-- /.body -->
